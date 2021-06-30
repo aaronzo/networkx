@@ -310,7 +310,7 @@ class TestSubgraphHashes:
     def test_isomorphic(self):
         """
         the subgraph hashes should be invariant to node-relabeling when the output is reindexed
-        by the same mapping and all hashes don't collide 
+        by the same mapping and all hashes don't collide.
         """
         n, r = 100, 10
         p = 1.0 / r

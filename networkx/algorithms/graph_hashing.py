@@ -104,17 +104,17 @@ def weisfeiler_lehman_graph_hash(
     Omitting the `edge_attr` option, results in identical hashes.
 
     >>> weisfeiler_lehman_graph_hash(G1)
-    '0db442538bb6dc81d675bd94e6ebb7ca'
+    '3108a936907b3ee3704642f9eeab34fe'
     >>> weisfeiler_lehman_graph_hash(G2)
-    '0db442538bb6dc81d675bd94e6ebb7ca'
+    '3108a936907b3ee3704642f9eeab34fe'
 
     With edge labels, the graphs are no longer assigned
     the same hash digest.
 
     >>> weisfeiler_lehman_graph_hash(G1, edge_attr="label")
-    '408c18537e67d3e56eb7dc92c72cb79e'
+    'd0819438f9cc0cd60ea93a6c70c2f939'
     >>> weisfeiler_lehman_graph_hash(G2, edge_attr="label")
-    'f9e9cb01c6d2f3b17f83ffeaa24e5986'
+    '43e9b18eeb859b669ad2269ecc6d43bf'
 
     References
     ----------
@@ -221,8 +221,8 @@ def weisfeiler_lehman_subgraph_hashes(
     >>> G2.add_edges_from([
     ...     (1, 3), (2, 3), (1, 6), (1, 5), (4, 6)
     ... ])
-    >>> g1_hashes = nx.weisfeiler_lehman_subgraph_hashes(G1, depth=3, digest_size=8)
-    >>> g2_hashes = nx.weisfeiler_lehman_subgraph_hashes(G2, depth=3, digest_size=8)
+    >>> g1_hashes = nx.weisfeiler_lehman_subgraph_hashes(G1, iterations=3, digest_size=8)
+    >>> g2_hashes = nx.weisfeiler_lehman_subgraph_hashes(G2, iterations=3, digest_size=8)
 
     Even though G1 and G2 are not isomorphic (they have different numbers of edges),
     the hash sequence of depth 3 for node 1 in G1 and node 5 in G2 are similar:
