@@ -159,12 +159,16 @@ Notes
 import inspect
 import os
 import warnings
+from contextlib import suppress
 from functools import partial
 from importlib.metadata import entry_points
 
 import networkx as nx
 
 from .decorators import argmap
+
+with suppress(ImportError):
+    from importlib_metadata import entry_points  # type: ignore[no-redef]
 
 __all__ = ["_dispatchable", "config"]
 

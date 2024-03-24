@@ -12,13 +12,16 @@ General guidelines for writing good tests:
 
 """
 import os
-import sys
 import warnings
+from contextlib import suppress
 from importlib.metadata import entry_points
 
 import pytest
 
 import networkx
+
+with suppress(ImportError):
+    from importlib_metadata import entry_points  # type: ignore[no-redef]
 
 
 def pytest_addoption(parser):
